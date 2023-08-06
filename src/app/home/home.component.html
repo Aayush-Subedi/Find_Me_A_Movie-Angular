@@ -1,0 +1,8 @@
+<h1>Angular HTTP Basics</h1>
+
+<button (click)="getPosts()">Get Posts</button>
+
+<div *ngFor="let post of posts">
+    <p>Title: {{ post.title }}</p>
+    <!-- Display other properties as needed -->
+  </div>
