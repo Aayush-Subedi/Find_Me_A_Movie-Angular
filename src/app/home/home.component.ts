@@ -3,22 +3,30 @@ import { TmdbService } from '../tmdb.service';
 
 @Component({
   selector: 'app-home',
-  template: `
-    <h2>Popular Movies</h2>
-    <ul>
-      <li *ngFor="let movie of movies">{{ movie.title }}</li>
-    </ul>
-  `
+  templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
   movies: any[] = [];
+  searchQuery: string = '';
 
   constructor(private tmdbService: TmdbService) {}
 
   ngOnInit() {
-    this.tmdbService.getPopularMovies().subscribe((data: any) => {
-      this.movies = data.results;
-      console.log(this.movies);
-    });
+    this.searchMovies(); // To load popular movies initially
+  }
+
+  searchMovies() {
+    if (this.searchQuery.trim() === '') {
+      // If the search query is empty, show popular movies
+      this.tmdbService.getPopularMovies().subscribe((data: any) => {
+        this.movies = data.results;
+      });
+    } else {
+      // Fetch movies by name using the search query
+      this.tmdbService.searchMoviesByName(this.searchQuery).subscribe((data: any) => {
+        this.movies = data.results;
+      });
+    }
   }
 }
+
