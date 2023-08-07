@@ -11,12 +11,13 @@ const routes: Routes = [
   },
   {
     component: MovieDetailsComponent,
-    path: 'details',
+    path: 'details/:id',
   },
   {
     component: AboutComponent,
     path: 'About',
   },
+
 ];
 
 @NgModule({

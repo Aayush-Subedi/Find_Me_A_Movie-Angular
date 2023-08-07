@@ -20,4 +20,9 @@ export class TmdbService {
     const url = `${this.apiUrl}/search/movie?api_key=${this.apiKey}&query=${query}`;
     return this.http.get(url);
   }
+
+  getMovieDetails(movieId: number): Observable<any> {
+    const url = `${this.apiUrl}/movie/${movieId}?api_key=${this.apiKey}`;
+    return this.http.get(url);
+  }
 }

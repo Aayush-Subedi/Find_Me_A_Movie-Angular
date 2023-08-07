@@ -1,1 +1,26 @@
-<p>movie-details works!</p>
+<div class="movie-details-container">
+    <div class="movie-details-poster">
+      <img *ngIf="movieDetails.poster_path" [src]="'https://image.tmdb.org/t/p/w400' + movieDetails.poster_path" alt="Movie Poster">
+    </div>
+    <div class="movie-details-content">
+      <h2>Movie Details</h2>
+      <div *ngIf="movieDetails">
+        <h3>{{ movieDetails.title }}</h3>
+        <p>Release Date: {{ movieDetails.release_date }}</p>
+        <p>Rating: {{ movieDetails.vote_average }}</p>
+        <p>Runtime: {{ movieDetails.runtime }} minutes</p>
+        <p>Genres: {{ getGenres(movieDetails.genres) }}</p>
+        <p>Overview: {{ movieDetails.overview }}</p>
+        <p>Status: {{ movieDetails.status }}</p>
+        <p>Tagline: {{ movieDetails.tagline }}</p>
+        <p>Original Language: {{ movieDetails.original_language }}</p>
+        <p>Production Companies:</p>
+        <ul>
+          <li *ngFor="let company of movieDetails.production_companies">{{ company.name }}</li>
+        </ul>
+        <p>Homepage: <a href="{{ movieDetails.homepage }}" target="_blank">{{ movieDetails.homepage }}</a></p>
+        <!-- Add more details as needed -->
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,48 @@
+.movie-details-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .movie-details-poster img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .movie-details-content {
+    flex: 1;
+  }
+  
+  .movie-details-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .movie-details-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .movie-details-content p {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .movie-details-content ul {
+    margin-left: 20px;
+    list-style-type: disc;
+  }
+  
+  .movie-details-content a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  /* Add more styling as needed */
+  
