@@ -3,7 +3,8 @@ import { TmdbService } from '../tmdb.service';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html'
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
   movies: any[] = [];
@@ -23,10 +24,11 @@ export class HomeComponent implements OnInit {
       });
     } else {
       // Fetch movies by name using the search query
-      this.tmdbService.searchMoviesByName(this.searchQuery).subscribe((data: any) => {
-        this.movies = data.results;
-      });
+      this.tmdbService
+        .searchMoviesByName(this.searchQuery)
+        .subscribe((data: any) => {
+          this.movies = data.results;
+        });
     }
   }
 }
-
