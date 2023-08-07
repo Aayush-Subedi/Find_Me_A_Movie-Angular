@@ -1,6 +1,7 @@
-<h2>Search Movies by Name</h2>
-<input type="text" [(ngModel)]="searchQuery" (keyup)="searchMovies()">
-
+<div class="search-container">
+    <h2>Search Movies by Name</h2>
+    <input type="text" [(ngModel)]="searchQuery" (keyup)="searchMovies()" class="search-input">
+  </div>  
 <h3>Popular Right Now</h3>
 <div class="movie-card-list">
   <div class="movie-card" *ngFor="let movie of movies">
