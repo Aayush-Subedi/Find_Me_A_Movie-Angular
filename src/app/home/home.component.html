@@ -5,8 +5,15 @@
 <div class="movie-card-list">
   <div class="movie-card" *ngFor="let movie of movies">
     <img *ngIf="movie.poster_path" [src]="'https://image.tmdb.org/t/p/w200' + movie.poster_path" alt="Movie Poster">
-    <div class="movie-card-title">
-      {{ movie.title }}
+    <div class="movie-card-content">
+      <div class="movie-card-title">
+        {{ movie.title }}
+      </div>
+      <div class="movie-card-details">
+        <p>Release Date: {{ movie.release_date }}</p>
+        <p>Rating: {{ movie.vote_average }}</p>
+        <a href="/details/{{ movie.id }}">Find More</a>
+      </div>
     </div>
   </div>
 </div>
